@@ -1,5 +1,5 @@
 Information gathering:
-	DNS Analysis:
+	#DNS Analysis:
 		#dnsdict6
 		#dnsmap
 		#dnsenum
@@ -7,8 +7,8 @@ Information gathering:
 		#dnsrevenum6 - need to update source tracker to https://github.com/mmoya/pkg-thc-ipv6
 		#dnstracer - from mainline
 		#dnswalk - from mainline
-		fierce
-		maltego
+		#fierce
+		#maltego
 		#nmap - from mainline
 		#urlcrazy
 	IDS/IPS Identification:
@@ -21,7 +21,7 @@ Information gathering:
 		cdpsnarf
 		#detect-new-ip-6
 		detect-sniffer6
-		dmitry
+		#dmitry
 		dnmap-client
 		dnmap-server
 		#fping - from mainline
@@ -47,11 +47,11 @@ Information gathering:
 		miranda
 		#nmap
 	OSINT Analysis:
-		casefile
+		#casefile
 		#creepy - from mainline
-		dmitry
+		#dmitry
 		jigsaw
-		maltego
+		#maltego
 		metagoofil
 		theharvester
 		twofi
@@ -151,8 +151,8 @@ Vulnerability Analysis:
 		#nmap - from mainline
 		unix-privesc-check
 	Open Source Assessment:
-		casefile
-		maltego
+		#casefile
+		#maltego
 		Open-vasopenvas-gsd
 		openvas-setup
 Web Applications:
@@ -638,10 +638,10 @@ Forensics:
 		volatility
 Reporting Tools:
 	Evidence Management:
-		casefile
+		#casefile
 		keepnote
 		magictree
-		maltego
+		#maltego
 		metagoofil
 #		truecrypt - you should be using freeotfe and luks anyway...
 #	Media Capture:

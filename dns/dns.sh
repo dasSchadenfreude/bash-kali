@@ -19,19 +19,28 @@ function install_urlcrazy(){
   }
 
 function install_fierce(){
-  '''
-  http://www.aldeid.com/wiki/Fierce
-  cpan[1]> install Net::CIDR
-  cpan[2]> install Net::Whois::ARIN
-  cpan[3]> install Object::InsideOut
-  cpan[4]> install Template
-  cpan[5]> install Test::Class
-  cpan[6]> install Test::MockObject
-  cpan[7]> install Net::DNS
-  cpan[8]> install Net::hostent
-  cpan[0]> install WWW::Mechanize
-  '''
-  echo "Fierce installation not implemented...god do I hate perl"
+  #install everything on gods earth related to dns because perl and ubuntu packaging talk like a couple of blind homosexual whores.
+  cd ~/dns
+  svn co https://svn.assembla.com/svn/fierce/fierce2/trunk/ fierce2
+  cd fierce2
+  chmod +x install.sh
+  sudo ./install.sh > /dev/null
+  echo "Fierce installation...god do I hate perl"
+  cd ~/work/bash-kali
+  }
+
+function install_dnsrecon(){
+  mkdir -p ~/dns
+  cd ~/
+  if [ ! -d dns/dnsrecon ]
+    then
+    git clone https://github.com/darkoperator/dnsrecon.git > /dev/null
+    cd dnsrecon
+    ls -laR
+  else
+    echo "Already tried to install dnsrecon"
+  fi
+  cd ~/work/bash-kali
   }
 
 function install_dnsmap(){
@@ -85,4 +94,7 @@ function install_dns_tools(){
   install_thc_tools
   install_dnsmap
   install_dnsenum
+  install_dnsrecon
+  install_urlcrazy
+  install_fierce
 }

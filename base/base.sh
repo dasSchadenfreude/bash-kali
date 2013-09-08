@@ -68,6 +68,7 @@ function enable_per_user(){
   }
 
 function apt_update(){
+  echo "Updating with apt"
   sudo apt-get update > /dev/null
   sudo apt-get upgrade -y > /dev/null
   sudo apt-get dist-upgrade -y > /dev/null
