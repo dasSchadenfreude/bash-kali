@@ -43,7 +43,8 @@ function install_immunity(){
   }
 
 function install_livehost(){
-  echo "Not implemented"
+  source livehost/livehost.sh
+  install_livehost_tools
   }
 
 function install_net(){
