@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function install_wordlists(){
+function install_wordlist(){
   echo "not implemented"
 }
 

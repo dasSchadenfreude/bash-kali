@@ -69,6 +69,11 @@ function install_web(){
   install_webapp
   }
 
+function install_wordlists(){
+  source wordlists/wordlists.sh
+  install_wordlist
+  }
+
 function install_all(){
   install_base
   install_net

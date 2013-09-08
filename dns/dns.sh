@@ -5,7 +5,8 @@ function install_dns_packaged(){
   }
 
 function install_urlcrazy(){
-  if [ ! -e ~/bin/urlcrazy ]
+  cd ~/
+  if [ ! -e bin/urlcrazy ]
      then
      cd ~/dns
      wget http://www.morningstarsecurity.com/downloads/urlcrazy-0.5.tar.gz
@@ -16,16 +17,18 @@ function install_urlcrazy(){
   else
     echo "Already tried to install urlcrazy"
   fi
+  cd ~/work/bash-kali
   }
 
 function install_fierce(){
-  #install everything on gods earth related to dns because perl and ubuntu packaging talk like a couple of blind homosexual whores.
-  cd ~/dns
-  svn co https://svn.assembla.com/svn/fierce/fierce2/trunk/ fierce2
-  cd fierce2
-  chmod +x install.sh
-  sudo ./install.sh > /dev/null
-  echo "Fierce installation...god do I hate perl"
+  if [ ! -d ~/dns/fierce2 ]
+    then
+      cd ~/dns
+      svn co https://svn.assembla.com/svn/fierce/fierce2/trunk/ fierce2
+      cd fierce2
+      chmod +x install.sh
+      sudo ./install.sh > /dev/null
+    fi
   cd ~/work/bash-kali
   }
 
