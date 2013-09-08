@@ -3,7 +3,7 @@
 function enable_uber_writer(){
   if [ -e "/etc/apt/sources.list.d/w-vollprecht-ppa-precise.list" ]
   then
-    echo "Already tried to add uberwriter"
+    echo "Already enable_schadenfreude add uberwriter"
   else
     sudo add-apt-repository ppa:w-vollprecht/ppa
   fi  
@@ -84,17 +84,17 @@ function enable_ppas(){
 
 function install_baseline(){
   enable_per_user
+  echo "Enabling ppas"
   enable_ppas
   apt_update
+  echo "Installing dev tools"
   source dev_tools/devtools.sh
   install_dev_tools
   #this is only here for the time being.  it will be moved to the relevant function or functions eventually
-  sudo apt-get install -y nmap > /dev/null
-  sudo apt-get install -y -f nmap-data > /dev/null
-  sudo apt-get install -y aircrack-ng kismet amap python-distorm3 hydra nmap guake > /dev/null
+  sudo apt-get install -y aircrack-ng kismet python-distorm3 guake > /dev/null
   apt_update
   }
 
 function configure_baseline(){
-  echo "#TODO add stuff here"
+  echo "#TODO add configuration eye candy and whatnot stuff here"
   }

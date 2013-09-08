@@ -118,6 +118,8 @@ function install_metasploit(){
       echo "Already tried to install metasploit"
   fi
   cd ~/work/bash-kali
+  #no link in ~/bin since some msf functionality doesn't work unless executed from msfroot
+  #that's also why it's in home instead of some long url
   }
 
 function install_rapid7(){

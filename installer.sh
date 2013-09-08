@@ -32,6 +32,20 @@ function install_dns(){
   install_dns_tools
   }
 
+function install_idsips(){
+  echo "Installing ids/ips tools"
+  source idsips/idsips.sh
+  install_ids_ips
+  }
+
+function install_immunity(){
+  echo "Not impemented"
+  }
+
+function install_livehost(){
+  echo "Not implemented"
+  }
+
 function install_net(){
   echo "Installing net"
   source network/network.sh
@@ -61,6 +75,11 @@ function install_reporting(){
   install_reporting_tools
 }
 
+function install_thc(){
+  source thc/thc_tools.sh
+  install_thc_tools
+}
+
 function install_web(){
   echo "Installing webapp"
   source network/network.sh
@@ -77,10 +96,17 @@ function install_wordlists(){
 
 function install_all(){
   install_base
+  install_datarescue
+  install_dns
+  install_idsips
+  install_immunity
+  install_livehost
   install_net
   install_osint
   install_rapid7
   install_reporting
+  install_thc
   install_web
+  install_wordlists
   install_plugins
   }

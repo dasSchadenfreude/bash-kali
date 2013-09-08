@@ -3,7 +3,7 @@ Information gathering:
 		#dnsdict6
 		#dnsmap
 		#dnsenum
-		dnsrecon - with plugin for metasploit
+		##dnsrecon - with plugin for metasploit
 		#dnsrevenum6 - need to update source tracker to https://github.com/mmoya/pkg-thc-ipv6
 		#dnstracer - from mainline
 		#dnswalk - from mainline
@@ -12,26 +12,26 @@ Information gathering:
 		#nmap - from mainline
 		#urlcrazy
 	IDS/IPS Identification:
-		fragroute
-		fragrouter
-		wafw00f
+		#fragroute
+		fragrouter - stuck...moving on
+		##wafw00f
 	Live Host Identification:
 		#alive6
 		#arping - from mainline
 		cdpsnarf
 		#detect-new-ip-6
-		detect-sniffer6
+		#detect-sniffer6 - need to update source tracker to https://github.com/mmoya/pkg-thc-ipv6
 		#dmitry
 		dnmap-client
 		dnmap-server
 		#fping - from mainline
 		#hping3 - from mainline
-		inverse_lookup6
+		#inverse_lookup6 - need to update source tracker to https://github.com/mmoya/pkg-thc-ipv6
 		miranda
 		#ncat - from mainline
 		#netdiscover - from mainline
 		#nmap - from mainline
-		passive_discovery6
+		#passive_discovery6 - need to update source tracker to https://github.com/mmoya/pkg-thc-ipv6
 		#thcping6
 		wol-e
 		#xprobe2 - from mainline
@@ -79,7 +79,7 @@ Information gathering:
 		#nmap - from mainline
 		smtp-user-enum
 		swalks
-		SNMP Analysis:
+	SNMP Analysis:
 		braa
 		cisco-auditing-tool
 		cisco-torch
@@ -359,7 +359,7 @@ Exploitation Tools:
 		#metasploit diagnostic logs - not necessary
 		#metasploit diagnostic shell - not necessary
 		#metasploit framework - not necessary
-		update metasploit
+		#update metasploit - not necessary, although i may put this in some update script for things that pull from head
 	Network Exploitation:
 		#exploit6
 		ikat

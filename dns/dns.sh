@@ -15,7 +15,7 @@ function install_urlcrazy(){
      ln -s ~/dns/urlcrazy-0.5/urlcrazy ~/bin/urlcrazy
      cd -
   else
-    echo "Already tried to install urlcrazy"
+    echo "Already tried to install urlcxrazy"
   fi
   cd ~/work/bash-kali
   }
@@ -32,18 +32,41 @@ function install_fierce(){
   cd ~/work/bash-kali
   }
 
-function install_dnsrecon(){
-  mkdir -p ~/dns
-  cd ~/dns
-  if [ ! -d dnsrecon ]
+function install_dnsrecon_plugin(){
+  cd ~/
+  if [ -d 'metasploit-framework' ] && [ ! -e 'metasploit-framework/plugins/dnsr_import.rb' ]
     then
-    git clone https://github.com/darkoperator/dnsrecon.git > /dev/null
-    cd dnsrecon
-    ls -laR
+      echo "Installing DNSRecon Import plugin"
+      cp virtual_env/dnsrecon/dnsrecon/msf_plugin/dnsr_import.rb metasploit-framework/plugins/dnsr_import.rb
+  else
+    echo "DNSREcon import already installed"
+  fi
+  cd ~/work/bash-kali
+}
+
+function install_dnsrecon_deps(){
+  sudo apt-get install libavahi-compat-libdnssd1 git-core python-setuptools virtualenv
+}
+
+function install_dnsrecon(){
+  cd ~/
+  if [ ! -d "virtual_env/dnsrecon" ]
+    then  
+      install_dnsrecon_deps
+      mkdir -p virtual_env
+      cd virtual_env
+      virtualenv dnsrecon
+      cd dnsrecon
+      source bin/activate
+      pip install netaddr dnspython
+      git clone https://github.com/darkoperator/dnsrecon.git > /dev/null
+      deactivate
+      #TODO add ~/bin
   else
     echo "Already tried to install dnsrecon"
   fi
   cd ~/work/bash-kali
+  install_dnsrecon_plugin
   }
 
 function install_dnsmap(){
@@ -68,12 +91,7 @@ function install_dnsmap(){
   }
 
 function install_dnsenum_deps(){
-  #I hate perl, but I include it for people that use tool counts...
-  #This will eventually be excluded in favor of a python tool that does the same.
-  #This way, if I ever get around to doing an import Universal; found = dnsbrute('domain'); it can be implemented
-  #as a single framework instead of disparate tools.
   sudo apt-get install -y libnet-netmask-perl libxml-writer-perl > /dev/null
-  #at least there's this https://github.com/darkoperator/MSF-Installer/blob/master/msf_install.sh
   }
 
 function install_dnsenum(){
