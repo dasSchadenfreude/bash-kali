@@ -70,6 +70,7 @@ function install_web(){
   }
 
 function install_wordlists(){
+  echo "Installing wordlists"
   source wordlists/wordlists.sh
   install_wordlist
   }

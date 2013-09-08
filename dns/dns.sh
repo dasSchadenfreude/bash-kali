@@ -34,8 +34,8 @@ function install_fierce(){
 
 function install_dnsrecon(){
   mkdir -p ~/dns
-  cd ~/
-  if [ ! -d dns/dnsrecon ]
+  cd ~/dns
+  if [ ! -d dnsrecon ]
     then
     git clone https://github.com/darkoperator/dnsrecon.git > /dev/null
     cd dnsrecon
